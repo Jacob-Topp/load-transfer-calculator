@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+	<head>
+	
+		<title>Load Transfer Calculator</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="load-transfer-calculator.css">
+		
+	</head>
+	
+	<body>
+	
+		<section id = "content">
+			
+			<div id = "header">
+			
+				<h1>Load Transfer Calculator</h1>
+				
+				<p>Fill the inputs section with your cars data to view the weight distribution for that given situation.</p>
+			
+			</div>
+			
+			<div id = "inputs" class = "box">
+				
+				<h2>Inputs</h2>
+				
+				<form onsubmit = "calculate();return false">
+					
+					<p>FL Weight (kg) <input type = "number" step = ".1" id = "FLWeightInput"></input></p>
+					
+					<p>FR Weight (kg) <input type = "number" step = ".1" id = "FRWeightInput"></input></p>
+					
+					<p>RL Weight (kg) <input type = "number" step = ".1" id = "RLWeightInput"></input></p>
+					
+					<p>RR Weight (kg) <input type = "number" step = ".1" id = "RRWeightInput"></input></p>
+					
+					<p>Wheelbase (mm) <input type = "number" id = "wheelbase"></input></p>
+					
+					<p>Front Track Width (mm) <input type = "number" id = "frontTrackWidth"></input></p>
+					
+					<p>Rear Track Width (mm) <input type = "number" id = "rearTrackWidth"></input></p>
+					
+					<p>CoG Height (mm) <input type = "number" id = "cogHeight"></input></p>
+					
+					<p>Acceleration Force (G) <input type = "number" step = ".01" id = "accelerationForce"></input></p>
+					
+					<p>Direction
+						
+						<select id = "direction">
+							
+							<option disabled selected>Select</option>
+							
+							<option>Acceleration</option>
+							
+							<option>Braking</option>
+							
+							<option>Left Turn</option>
+							
+							<option>Right Turn</option>
+							
+						</select>
+					
+					</p>
+					
+					<p><input type = "submit" value = "Calculate"></input></p>
+					
+				</form>
+				
+			</div>
+			
+			<div id = "outputs" class = "box nestedOutputs">
+				
+				<h2>Outputs</h2>
+				
+				<table id = "staticOutputs">
+				  <tr>
+					<th colspan="2">Static</th>
+				  </tr>
+				  <tr>
+					<td>Front Axle Weight (kg)</td>
+					<td id = "frontAxleWeight"></td>
+				  </tr>
+				  <tr>
+					<td>Rear Axle Weight (kg)</td>
+					<td id = "rearAxleWeight"></td>
+				  </tr>
+				  <tr>
+					<td>Total Weight (kg)</td>
+					<td id = "totalWeight"></td>
+				  </tr>
+				  <tr>
+					<td>Front Weight Distribution (%)</td>
+					<td id = "frontWeightDistribution"></td>
+				  </tr>
+				</table>
+				
+				<table id = "dynamicOutputs">
+				  <tr>
+					<th colspan="2">Dynamic</th>
+				  </tr>
+				  <tr>
+					<td>FL Weight (kg)</td>
+					<td id = "FLWeightOutput"></td>
+				  </tr>
+				  <tr>
+					<td>FR Weight (kg)</td>
+					<td id = "FRWeightOutput"></td>
+				  </tr>
+				  <tr>
+					<td>RL Weight (kg)</td>
+					<td id = "RLWeightOutput"></td>
+				  </tr>
+				  <tr>
+					<td>RR Weight (kg)</td>
+					<td id = "RRWeightOutput"></td>
+				  </tr>
+				</table>
+				
+			</div>
+			
+			<div id = "carImage">
+				
+				<div id = "car"><img src = "images//car-top-view-2.PNG"></img></div>
+				
+				<!-- <div id = "FL"></div> -->
+				
+				<!-- <div id = "FR"></div> -->
+				
+				<!-- <div id = "RL"></div> -->
+				
+				<!-- <div id = "RR"></div> -->
+				
+			</div>
+			
+		</section>
+		
+		<script type = "text/javascript" src = "load-transfer-calculator.js"></script>
+	
+	</body>
+	
+</html>
